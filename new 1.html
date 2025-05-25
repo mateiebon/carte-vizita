@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carte de Vizită / Business Card</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 360px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    .name {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .role, .company {
+      margin: 5px 0;
+    }
+    .contact a {
+      display: block;
+      margin: 5px 0;
+      color: #007bff;
+      text-decoration: none;
+    }
+    .language-btn {
+      margin-top: 10px;
+      padding: 5px 15px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="language-btn" onclick="switchLanguage()">Switch to English</button>
+
+  <div class="card" id="ro-card">
+    <img src="C:\Users\MATEIMIHAI\Downloads\liftservice.jpg" alt="Poză profil" class="profile-img">
+    <div class="name">Mihai Florea</div>
+    <div class="role">Owner & Founder</div>
+    <div class="company">Lift Service</div>
+    <p>SERVICII COMPLETE IN LIFTURI Intretinere, reparatii, modernizari, montaj lifturi/platforme-operator RSVTI</p>
+
+    <div class="contact">
+      <a href="tel:+40746177891">📞 <!-- Telefon 1 --> </a>
+      <a href="mailto:liftservicesv@yahoo.com">📧 <!-- Email --> </a>
+      <a href="https://www.svlift.ro/" target="_blank">🌐 Lift Service </a>
+    </div>
+  </div>
+
+  <div class="card" id="en-card" style="display:none;">
+    <img src="C:\Users\MATEIMIHAI\Downloads\liftservice.jpg" alt="Profile Picture" class="profile-img">
+    <div class="name">Mihai Florea</div>
+    <div class="role">Owner & Founder</div>
+    <div class="company">Lift Service</div>
+    <p>COMPLETE SERVICES IN ELEVATORS Maintenance, repairs, modernizations, installation of elevators/operator platforms RSVTI</p>
+
+    <div class="contact">
+      <a href="tel:+40746177891">📞 <!-- Phone 1 --> </a>
+      <a href="mailto:liftservicesv@yahoo.com">📧 <!-- Email --> </a>
+      <a href="https://www.svlift.ro/" target="_blank">🌐 <!-- Website --> </a>
+    </div>
+  </div>
+
+  <script>
+    let currentLang = "ro";
+    function switchLanguage() {
+      const roCard = document.getElementById("ro-card");
+      const enCard = document.getElementById("en-card");
+      const button = document.querySelector(".language-btn");
+
+      if (currentLang === "ro") {
+        roCard.style.display = "none";
+        enCard.style.display = "block";
+        button.textContent = "Comută în română";
+        currentLang = "en";
+      } else {
+        roCard.style.display = "block";
+        enCard.style.display = "none";
+        button.textContent = "Switch to English";
+        currentLang = "ro";
+      }
+    }
+  </script>
+
+</body>
+</html>
